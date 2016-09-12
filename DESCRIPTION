@@ -1,0 +1,26 @@
+Package: stringr.plus
+Type: Package
+Title: Extension to Stringr
+Version: 0.1.0
+Date: 2016-09-11
+Author@R: c(
+    person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
+    person("Decision Patterns", role = "cph")
+    )
+Description:
+    This packages collects useful extensions that add functionality missing in
+    the 'stringr' packages. It closely follows 'stringr' conventions and since
+    it depends on the 'stringr' package, this can be used as a drop-in
+    replacement.
+Depends:
+     stringr (>= 1.0.0)
+Suggests:
+     testthat,
+     knitr
+License: GPL-2 | file LICENSE
+LazyData: TRUE
+Date: 2016-05-16
+Authors@R: c(
+    person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
+    person("Decision Patterns", role = "cph")
+    )
