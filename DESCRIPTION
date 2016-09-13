@@ -1,7 +1,7 @@
 Package: stringr.plus
 Type: Package
 Title: Extension to Stringr
-Version: 0.1.1
+Version: 0.1.2
 Date: 2016-09-12
 Author@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),

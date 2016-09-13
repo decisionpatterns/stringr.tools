@@ -3,4 +3,7 @@
 export(str_detect_tag)
 export(str_grep)
 export(str_grepv)
+export(str_split_ws_nonquote)
+import(stringi)
 import(stringr)
+importFrom(magrittr,"%>%")
