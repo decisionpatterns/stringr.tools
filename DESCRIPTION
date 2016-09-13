@@ -1,21 +1,21 @@
 Package: stringr.plus
 Type: Package
 Title: Extension to Stringr
-Version: 0.1.0
-Date: 2016-09-11
+Version: 0.1.1
+Date: 2016-09-12
 Author@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
     )
 Description:
-    This packages collects useful extensions that add functionality missing in
-    the 'stringr' packages. It closely follows 'stringr' conventions and since
-    it depends on the 'stringr' package, this can be used as a drop-in
-    replacement.
+    This packages collects useful extensions, missing functions and common
+    recipes missing from the 'stringr' package. It closely follows 'stringr'
+    conventions, depends on 'stringr' and can therefore serve as a
+    drop-in replacement.
 Depends:
      stringr (>= 1.0.0)
 Suggests:
-     testthat,
-     knitr
+     testthat (>= 0.10.0),
+     knitr (>= 1.13)
 License: GPL-2 | file LICENSE
 LazyData: TRUE
