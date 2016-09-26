@@ -5,7 +5,9 @@
 #'
 #' @details
 #'
-#' Builds a regex class from character vector
+#' Builds a regex class from character vector.  A regular expression class are
+#' character elements that are surrounded by "[" and "]" and match ANY member of
+#' that class.
 #'
 #' @examples
 #'

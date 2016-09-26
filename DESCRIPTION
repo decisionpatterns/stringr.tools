@@ -1,8 +1,8 @@
 Package: stringr.plus
 Type: Package
 Title: Extension to Stringr
-Version: 0.1.2
-Date: 2016-09-12
+Version: 0.1.3
+Date: 2016-09-26
 Author@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
