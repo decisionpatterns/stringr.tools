@@ -1,4 +1,4 @@
 library(testthat)
-library(stringr.plus)
+library(stringr.tools)
 
-test_check("stringr.plus")
+test_check("stringr.tools")
