@@ -29,7 +29,7 @@
 #'   "'foo' \"bar\"" %>% str_split_ws_nonquote # "foo" "bar"
 #'   "'foo bar" %>% str_split_ws_nonquote      #
 #'
-#' @import stringi
+# @import stringi
 #' @importFrom magrittr %>%
 #' @export
 
@@ -58,5 +58,6 @@ str_split_ws_nonquote <- function(x, quotes=c("'",'"') ) {
 #   mk_quote_regex("'") # '[^']*'
 #   mk_quote_regex('"') # \"[^\"]*\"
 #   mk_quote_regex( c("'","\""))
+
 mk_quote_regex <- function(x) paste( x, "[^", x, ']*', x, sep="" )
 

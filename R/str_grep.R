@@ -32,7 +32,6 @@
 #'  str_grep( letters, '[aeiou]' )
 #'  str_grepv( letters[1:5], '[aeiou]' )
 #'
-#' @import stringr
 #' @export
 
 str_grep <- function(string, pattern)
