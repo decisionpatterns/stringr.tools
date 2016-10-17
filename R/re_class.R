@@ -1,5 +1,6 @@
-#'  regex class from character vector
+#' REGEX class from character vector
 #'
+#' Creates a regular expression class from a character vector
 #' @param x character; character vectors
 #' @param reverse logical; whether to reverse the class (not implemented)
 #'
@@ -13,6 +14,8 @@
 #'
 #' re_class( letters[1:3] )  # [abc]
 #'
+#' @export
+
 re_class <- function(x, reverse=FALSE) {
   paste0( "[", paste( x, collapse="" ), "]" )
 }

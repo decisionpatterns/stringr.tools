@@ -1,8 +1,8 @@
 Package: stringr.tools
 Type: Package
-Title: Extension to Stringr
-Version: 0.1.4
-Date: 2016-09-26
+Title: Useful Extensions to the Popular 'stringr' Package
+Version: 0.1.5
+Date: 2016-10-17
 Author@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
@@ -13,9 +13,10 @@ Description:
     conventions, depends on 'stringr' and can therefore serve as a
     drop-in replacement.
 Depends:
-     stringr (>= 1.0.0)
+    stringr (>= 1.0)
 Suggests:
-     testthat (>= 0.10.0),
-     knitr (>= 1.13)
+    testthat (>= 0.10.0),
+    knitr (>= 1.13)
 License: GPL-2 | file LICENSE
 LazyData: TRUE
+RoxygenNote: 5.0.1.9000

@@ -33,22 +33,16 @@
 #' @importFrom magrittr %>%
 #' @export
 
-# str_split_ws_nonquote <- function(x, quotes=c("'",'"'), whitespace="[^\\s]+" ) {
 str_split_ws_nonquote <- function(x, quotes=c("'",'"') ) {
 
   x <- as.character(x)
   if( length(x) == 0 ) return(x)
-
-  # c(quotes,whitespace) %>%
-  # paste0("", sep="|", collapse = "" )
 
   splits <-
     "'[^']*'|\"[^\"]*\"|[^\\s]+" %>%
     #<-----> <--------> <----->
     #'[^']*'|\"[^\"]*\"
     stringi::stri_extract_all_regex( x, . )
-
-
 
   if( ! length(splits[[1]]) > 1 ) return(x)
 
