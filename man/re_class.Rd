@@ -24,4 +24,3 @@ that class.
 re_class( letters[1:3] )  # [abc]
 
 }
-

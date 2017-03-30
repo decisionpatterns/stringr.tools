@@ -32,4 +32,3 @@ quotes are removed.
 \references{
 Stackoverflow
 }
-

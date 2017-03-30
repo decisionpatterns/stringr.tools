@@ -5,9 +5,11 @@
 \alias{str_suffix}
 \title{Add prefix or suffix to a string}
 \usage{
-str_prefix(x, prefix, sep = ".")
+str_prefix(x, prefix, sep = getOption("str_prefix_separator",
+  get_option("str_seperator", ".")))
 
-str_suffix(x, suffix, sep = ".")
+str_suffix(x, suffix, sep = getOption("str_prefix_separator",
+  get_option("str_seperator", ".")))
 }
 \arguments{
 \item{x}{character vector or object with a names attribute}
@@ -15,7 +17,7 @@ str_suffix(x, suffix, sep = ".")
 \item{prefix}{string;}
 
 \item{sep}{character vector to separate \code{prefix} from \code{x}. The
-default is "."}
+default is "." See Details.}
 
 \item{suffix}{character;}
 }
@@ -27,10 +29,15 @@ specified.
 Adds a prefix or suffix to strings
 }
 \details{
-This is a convenient wrapper for paste( prefix, x, sep ) and
-paste( x, suffix, sep).
+This is a convenient wrapper for \code{paste( x, prefix, sep )} and
+\code{paste( x, suffix, sep)}.
+
+The separator is looked in the options list for: \code{str_prefix_separator} /
+\code{str_suffux_separator} followed by \code{str_separator}. If those are not found
+\code{.} is used.
 }
 \examples{
+
   lets <- letters[1:5]
   str_prefix( lets, "letter" )
   str_prefix( lets, "letter", sep="_" )
@@ -39,4 +46,3 @@ paste( x, suffix, sep).
   str_suffix( lets, "letter", sep="_" )
 
 }
-

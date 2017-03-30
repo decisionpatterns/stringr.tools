@@ -39,4 +39,3 @@ closing characters.
 \author{
 Decision Patterns from the base.tools packages; used with permission.
 }
-

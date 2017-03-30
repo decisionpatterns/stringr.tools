@@ -43,4 +43,3 @@ a pattern.
 \seealso{
 \code{\link[stringr]{str_detect}} \cr
 }
-
