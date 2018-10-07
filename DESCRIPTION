@@ -1,8 +1,8 @@
 Package: stringr.tools
 Type: Package
 Title: Useful Extensions to the Popular 'stringr' Package
-Version: 0.1.6
-Date: 2017-03-30
+Version: 0.2.0
+Date: 2018-10-07
 Author@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
