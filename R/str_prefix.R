@@ -50,41 +50,47 @@ str_suffix <- str_postfix
 #'
 #' @examples
 #'  x <- c( "foo", "pre.foo", "bar", "pre.bar" )
-#'
 #'  str_prefix_idem(x, "pre.")
 #'
 #' @rdname str_prefix
 #' @export
 
-  str_prefix_idem <- function(x, prefix, ...) {
+str_prefix_idem <- function(x, prefix, ...) {
 
-    re <- paste0("^", prefix) # regular expression match
-    wh <- x %>% str_detect(re) %>% not()
+  prefix ->.;
+    escape_dot(.) ->.;
+    paste0( "^", .) ->
+    re
 
-    x[wh] <- x[ wh ] %>% str_prefix(prefix)
+  wh <- ! str_detect( x, re )
 
-    x
+  x[wh] <- str_prefix( x[wh], prefix )
 
-  }
+  x
+
+}
 
 
 #' @examples
-#'  x <- c( "foo", "pre.foo", "bar", "pre.bar" )
-#'
+#'  x <- c( "foo", "foo.post", "bar", "bar.post" )
 #'  str_postfix_idem(x, ".post")
 #'
 #' @rdname str_prefix
 #' @export
-  str_postfix_idem <- function(x, postfix, ...) {
+str_postfix_idem <- function(x, postfix, ...) {
 
-    re <- paste0("^", postfix)
-    wh <- x %>% str_detect(re) %>% not()
+  postfix ->.;
+    escape_dot(.) ->.;
+    paste0( ., "$" ) ->
+    re
 
-    x[wh] <- x[ wh ] %>% str_suffix(postfix)
+  wh <- ! str_detect(x, re)
 
-    x
+  x[wh] <- str_postfix( x[wh], postfix )
 
-  }
+  x
+
+}
 
 #' @rdname str_prefix
 #' @export

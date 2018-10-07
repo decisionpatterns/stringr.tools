@@ -52,11 +52,9 @@ not be added to elements that are already prefixed.
   str_posfix( lets, ".post" )
 
  x <- c( "foo", "pre.foo", "bar", "pre.bar" )
-
  str_prefix_idem(x, "pre.")
 
- x <- c( "foo", "pre.foo", "bar", "pre.bar" )
-
+ x <- c( "foo", "foo.post", "bar", "bar.post" )
  str_postfix_idem(x, ".post")
 
 }
