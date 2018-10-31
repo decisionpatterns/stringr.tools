@@ -16,7 +16,7 @@ tags separated by \code{sep}}
 between tags in \code{string} ( Default: ',' )}
 
 \item{ignore_case}{logical whether to ignore case during matching
-  ( Default: TRUE)
+( Default: TRUE)
 
 Tags are matched using \code{str_detect} using Perl regular expressions.
 Leading and trailing whitespace are ignored.}

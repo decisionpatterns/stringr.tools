@@ -16,7 +16,7 @@ Creates a regular expression class from a character vector
 }
 \details{
 Builds a regex class from character vector.  A regular expression class are
-character elements that are surrounded by `[` and ]` and match ANY member of
+character elements that are surrounded by \code{[} and ]` and match ANY member of
 that class.
 }
 \examples{

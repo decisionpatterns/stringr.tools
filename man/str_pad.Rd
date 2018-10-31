@@ -25,11 +25,11 @@ str_lpad_max(string, pad = " ")
 
 \item{pad}{single character string}
 
-\item{side}{character; one of `left`, `right` or `both`}
+\item{side}{character; one of \code{left}, \code{right} or \code{both}}
 }
 \description{
 pad strings on one right or left
 }
 \details{
-These are convenience wrappers around [stringr::str_pad()]
+These are convenience wrappers around \code{\link[stringr:str_pad]{stringr::str_pad()}}
 }

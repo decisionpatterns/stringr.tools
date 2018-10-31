@@ -16,5 +16,5 @@ logical
 Test if object is a string
 }
 \details{
-Tests if `x` is a string, i.e. a lenght-1 charactaer vector.
+Tests if \code{x} is a string, i.e. a lenght-1 charactaer vector.
 }

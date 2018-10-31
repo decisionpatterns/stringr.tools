@@ -41,9 +41,9 @@ Adds a prefix or suffix to strings
 This is a convenient wrapper for \code{paste0( x, prefix, ...)} and
 \code{paste( x, suffix, ...)}.
 
-`str_postfix` is an alias for `str_postfix`.
+\code{str_postfix} is an alias for \code{str_postfix}.
 
-[str_prefix_idem()] is an idempotent form of [str_prefix()]. Prefixes will
+\code{\link[=str_prefix_idem]{str_prefix_idem()}} is an idempotent form of \code{\link[=str_prefix]{str_prefix()}}. Prefixes will
 not be added to elements that are already prefixed.
 }
 \examples{
