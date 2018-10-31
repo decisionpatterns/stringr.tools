@@ -2,24 +2,33 @@
 % Please edit documentation in R/str_prefix.R
 \name{str_prefix}
 \alias{str_prefix}
+\alias{str_postfix}
 \alias{str_suffix}
+\alias{str_prefix_idem}
+\alias{str_postfix_idem}
+\alias{str_suffix_idem}
 \title{Add prefix or suffix to a string}
 \usage{
-str_prefix(x, prefix, sep = getOption("str_prefix_separator",
-  getOption("str_seperator", ".")))
+str_prefix(x, prefix, ...)
 
-str_suffix(x, suffix, sep = getOption("str_prefix_separator",
-  getOption("str_seperator", ".")))
+str_postfix(x, postfix, ...)
+
+str_suffix(x, postfix, ...)
+
+str_prefix_idem(x, prefix, ...)
+
+str_postfix_idem(x, postfix, ...)
+
+str_suffix_idem(x, postfix, ...)
 }
 \arguments{
 \item{x}{character vector or object with a names attribute}
 
 \item{prefix}{string;}
 
-\item{sep}{character vector to separate \code{prefix} from \code{x}. The
-default is "." See Details.}
+\item{...}{additional arguments passed to \code{\link[base:paste]{base::paste()}}}
 
-\item{suffix}{character;}
+\item{postfix}{string used as a suffix;}
 }
 \value{
 character vector with each element of \code{x} prefixed or sufffixed as
@@ -29,20 +38,23 @@ specified.
 Adds a prefix or suffix to strings
 }
 \details{
-This is a convenient wrapper for \code{paste( x, prefix, sep )} and
-\code{paste( x, suffix, sep)}.
+This is a convenient wrapper for \code{paste0( x, prefix, ...)} and
+\code{paste( x, suffix, ...)}.
 
-The separator is looked in the options list for: \code{str_prefix_separator} /
-\code{str_suffux_separator} followed by \code{str_separator}. If those are not found
-\code{.} is used.
+`str_postfix` is an alias for `str_postfix`.
+
+[str_prefix_idem()] is an idempotent form of [str_prefix()]. Prefixes will
+not be added to elements that are already prefixed.
 }
 \examples{
-
   lets <- letters[1:5]
-  str_prefix( lets, "letter" )
-  str_prefix( lets, "letter", sep="_" )
+  str_prefix( lets, "pre." )
+  str_posfix( lets, ".post" )
 
-  str_suffix( lets, "letter" )
-  str_suffix( lets, "letter", sep="_" )
+ x <- c( "foo", "pre.foo", "bar", "pre.bar" )
+ str_prefix_idem(x, "pre.")
+
+ x <- c( "foo", "foo.post", "bar", "bar.post" )
+ str_postfix_idem(x, ".post")
 
 }

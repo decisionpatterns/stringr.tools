@@ -1,6 +1,6 @@
-#' Split on white-space removing quotes
+#' Intelligently Split on Whitespace
 #'
-#' Splits a string on whitespace but ignoring whitespace inside quotes
+#' Splits a string on whitespace while ignoring whitespace inside quotes
 #'
 #' @param x character or string; (required)
 #'
@@ -13,7 +13,7 @@
 #' by whitespace and ignoring whitespace enclosed in quotes.  It also removes
 #' those quotes from strings.
 #'
-#' \code{str_split_ws_nonquote} oses not (yet?) allow for different opening and
+#' \code{str_split_ws_quoted} uses not (yet?) allow for different opening and
 #' closing characters.
 #'
 #' @return character vector
@@ -29,35 +29,29 @@
 #'   "'foo' \"bar\"" %>% str_split_ws_nonquote # "foo" "bar"
 #'   "'foo bar" %>% str_split_ws_nonquote      #
 #'
-# @import stringi
-#' @importFrom magrittr %>%
+#' @import stringi
 #' @export
 
-str_split_ws_nonquote <- function(x, quotes=c("'",'"') ) {
+str_split_ws_quoted <- function(x, quotes=c("'",'"') ) {
 
   x <- as.character(x)
   if( length(x) == 0 ) return(x)
 
+  re.split_preserve_quotes <- "'[^']*'|\"[^\"]*\"|[^\\s]+"
+  re.replace_preserve_quotes <- "^[\"']|[\"']"
+
   splits <-
-    "'[^']*'|\"[^\"]*\"|[^\\s]+" %>%
-    # <-----> <--------> <----->
-    # [^']*'|\"[^\"]*\"
-    stringi::stri_extract_all_regex( x, . )
+    # "'[^']*'|\"[^\"]*\"|[^\\s]+" %>%
+    stringi::stri_extract_all_regex(x , re.split_preserve_quotes )
 
   if( ! length(splits[[1]]) > 1 ) return(x)
 
-  splits %>%
-    magrittr::extract2(1) %>%
-    stringi::stri_replace_all_regex( ., "^[\"']|[\"']", "" )
+
+  # splits[[1]] %>%
+  #   stringi::stri_replace_all_regex( "^[\"']|[\"']", "" )
+
+  stringi::stri_replace_all_regex( splits[[1]], re.replace_preserve_quotes, "" )
 
 }
 
-# Makes regex part for not, e.g. '[^']*'
-#                                open [^classes]* c
-# @examples
-#   mk_quote_regex("'") # '[^']*'
-#   mk_quote_regex('"') # \"[^\"]*\"
-#   mk_quote_regex( c("'","\""))
-
-mk_quote_regex <- function(x) paste( x, "[^", x, ']*', x, sep="" )
 

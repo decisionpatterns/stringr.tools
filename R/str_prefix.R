@@ -4,51 +4,95 @@
 #'
 #' @param x character vector or object with a names attribute
 #' @param prefix string;
-#' @param suffix character;
-#' @param sep character vector to separate \code{prefix} from \code{x}. The
-#'   default is "." See Details.
+#' @param postfix string used as a suffix;
+#' @param ... additional arguments passed to [base::paste()]
 #'
 #' @details
 #'
-#' This is a convenient wrapper for `paste( x, prefix, sep )` and
-#' `paste( x, suffix, sep)`.
-#'
-#' The separator is looked in the options list for: `str_prefix_separator` /
-#' `str_suffux_separator` followed by `str_separator`. If those are not found
-#' `.` is used.
+#' This is a convenient wrapper for `paste0( x, prefix, ...)` and
+#' `paste( x, suffix, ...)`.
 #'
 #' @return
 #' character vector with each element of \code{x} prefixed or sufffixed as
 #' specified.
 #'
 #' @examples
-#'
 #'   lets <- letters[1:5]
-#'   str_prefix( lets, "letter" )
-#'   str_prefix( lets, "letter", sep="_" )
-#'
-#'   str_suffix( lets, "letter" )
-#'   str_suffix( lets, "letter", sep="_" )
+#'   str_prefix( lets, "pre." )
+#'   str_posfix( lets, ".post" )
 #'
 #' @md
 #' @rdname str_prefix
 #' @export
 
-str_prefix <- function(
-    x
-  , prefix
-  , sep = getOption('str_prefix_separator', getOption('str_seperator', '.' ) )
-)
-  paste( prefix, x, sep=sep)
+str_prefix <- function(x, prefix, ...)
+  paste0( prefix, x, ...)
+
+
+
+#' @details
+#' `str_postfix` is an alias for `str_postfix`.
+#'
+#' @rdname str_prefix
+#' @export
+str_postfix <- function(x, postfix, ...)
+  paste0( x, postfix, ...)
 
 
 #' @rdname str_prefix
 #' @export
+str_suffix <- str_postfix
 
-str_suffix <- function(
-    x
-  , suffix
-  , sep = getOption('str_prefix_separator', getOption('str_seperator', '.' ) )
-)
-  paste( x, suffix, sep=sep)
 
+#' @details
+#' [str_prefix_idem()] is an idempotent form of [str_prefix()]. Prefixes will
+#' not be added to elements that are already prefixed.
+#'
+#' @examples
+#'  x <- c( "foo", "pre.foo", "bar", "pre.bar" )
+#'  str_prefix_idem(x, "pre.")
+#'
+#' @rdname str_prefix
+#' @export
+
+str_prefix_idem <- function(x, prefix, ...) {
+
+  prefix ->.;
+    escape_dot(.) ->.;
+    paste0( "^", .) ->
+    re
+
+  wh <- ! str_detect( x, re )
+
+  x[wh] <- str_prefix( x[wh], prefix )
+
+  x
+
+}
+
+
+#' @examples
+#'  x <- c( "foo", "foo.post", "bar", "bar.post" )
+#'  str_postfix_idem(x, ".post")
+#'
+#' @rdname str_prefix
+#' @export
+str_postfix_idem <- function(x, postfix, ...) {
+
+  postfix ->.;
+    escape_dot(.) ->.;
+    paste0( ., "$" ) ->
+    re
+
+  wh <- ! str_detect(x, re)
+
+  x[wh] <- str_postfix( x[wh], postfix )
+
+  x
+
+}
+
+#' @rdname str_prefix
+#' @export
+
+str_suffix_idem <- str_postfix_idem

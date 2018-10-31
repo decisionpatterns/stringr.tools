@@ -2,7 +2,7 @@
 % Please edit documentation in R/re_class.R
 \name{re_class}
 \alias{re_class}
-\title{REGEX class from character vector}
+\title{Construct REGEX class from character vector}
 \usage{
 re_class(x, reverse = FALSE)
 }
@@ -16,11 +16,10 @@ Creates a regular expression class from a character vector
 }
 \details{
 Builds a regex class from character vector.  A regular expression class are
-character elements that are surrounded by "\link{" and "}" and match ANY member of
+character elements that are surrounded by `[` and ]` and match ANY member of
 that class.
 }
 \examples{
-
 re_class( letters[1:3] )  # [abc]
 
 }
