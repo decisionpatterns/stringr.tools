@@ -29,11 +29,11 @@ a pattern.
 }
 \details{
 \code{str_grep} returnes elements matching a pattern. Shorthand for
-  \code{ string[ str_detect(string,pattern) ] } \cr
+\code{ string[ str_detect(string,pattern) ] } \cr
 
- \code{str_grepv} returnes elements that do not matching a pattern. The 'v'
- derived from the unix flag \code{-v} from the linux \code{grep} command. It
- is mostly as a convenient way to avoid negative lookaheads.\cr
+\code{str_grepv} returnes elements that do not matching a pattern. The 'v'
+derived from the unix flag \code{-v} from the linux \code{grep} command. It
+is mostly as a convenient way to avoid negative lookaheads.\cr
 }
 \examples{
  str_grep( letters, '[aeiou]' )

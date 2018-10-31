@@ -4,7 +4,7 @@
 \alias{str_detect_tag}
 \title{str_detect_tag}
 \usage{
-str_detect_tag(string, tags, sep = ",", ignore.case = TRUE)
+str_detect_tag(string, tags, sep = ",", ignore_case = TRUE)
 }
 \arguments{
 \item{string}{character vector with each element containing zero or  more
@@ -15,15 +15,15 @@ tags separated by \code{sep}}
 \item{sep}{character; single element (usually single character) separator
 between tags in \code{string} ( Default: ',' )}
 
-\item{ignore.case}{logical whether to ignore case during matching
-  ( Default: TRUE)
+\item{ignore_case}{logical whether to ignore case during matching
+( Default: TRUE)
 
 Tags are matched using \code{str_detect} using Perl regular expressions.
 Leading and trailing whitespace are ignored.}
 }
 \value{
 logical of the same length of \code{score} indicating whether the
-  element of score contains ANY of the tags.
+element of score contains ANY of the tags.
 }
 \description{
 Similar to stringr's \code{str_detect} except matches are determined by the
@@ -39,8 +39,8 @@ allow for leading/trailing white space
   string <- c( 'X', 'Y', 'Z', 'Y,Z' )
   tags <- list( 'X', '(y)' )
 
-  str_detect_tag( string, tags )   # T, T, F
-  str_detect_tag( string, tags, ignore.case=FALSE )  # T, F, F
+  str_detect_tag( string, tags )   # T, T, F, T
+  str_detect_tag( string, tags, ignore_case=FALSE )  # T, F, F, F
 
 }
 \seealso{

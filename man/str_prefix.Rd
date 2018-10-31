@@ -6,10 +6,10 @@
 \title{Add prefix or suffix to a string}
 \usage{
 str_prefix(x, prefix, sep = getOption("str_prefix_separator",
-  get_option("str_seperator", ".")))
+  getOption("str_seperator", ".")))
 
 str_suffix(x, suffix, sep = getOption("str_prefix_separator",
-  get_option("str_seperator", ".")))
+  getOption("str_seperator", ".")))
 }
 \arguments{
 \item{x}{character vector or object with a names attribute}

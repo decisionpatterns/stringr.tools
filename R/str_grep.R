@@ -39,6 +39,6 @@ str_grep <- function(string, pattern)
 
 #' @rdname str_grep
 #' @export
-#
+
 str_grepv <- function(string, pattern)
   string[ ! str_detect(string,pattern) ]

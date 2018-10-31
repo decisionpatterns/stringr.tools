@@ -40,8 +40,8 @@ str_split_ws_nonquote <- function(x, quotes=c("'",'"') ) {
 
   splits <-
     "'[^']*'|\"[^\"]*\"|[^\\s]+" %>%
-    #<-----> <--------> <----->
-    #'[^']*'|\"[^\"]*\"
+    # <-----> <--------> <----->
+    # [^']*'|\"[^\"]*\"
     stringi::stri_extract_all_regex( x, . )
 
   if( ! length(splits[[1]]) > 1 ) return(x)
