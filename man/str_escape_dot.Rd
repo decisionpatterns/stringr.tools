@@ -13,10 +13,10 @@ str_escape_dot(string)
 Replaces \code{.} with \code{\\.} in strings.
 }
 \details{
-This escpaes \strong{all} instances in single-dot in strings. This is handy when
-working with regular expressions where a period/dot is used to mean any
-character. By escaping, the regular expression will match on a literal
-period.
+\code{str_replace_dot} escapes \strong{all} instances of single-dot in a string. This
+is handy when working with regular expressions where a period/dot is used to
+mean any character. By escaping, the regular expression will match on a
+literal period (\code{.}) instead. This is common in matching with filepaths.
 
 \code{str_replace_dot} is simply:\preformatted{ `str_replace_all(string, fixed("."), "\\.")``
 }
