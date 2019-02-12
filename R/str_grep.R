@@ -32,13 +32,14 @@
 #'  str_grep( letters, '[aeiou]' )
 #'  str_grepv( letters[1:5], '[aeiou]' )
 #'
+#' @importFrom stringr str_detect
 #' @export
 
 str_grep <- function(string, pattern)
-  string[ str_detect(string,pattern) ]
+  string[ stringr::str_detect(string,pattern) ]
 
 #' @rdname str_grep
 #' @export
 
 str_grepv <- function(string, pattern)
-  string[ ! str_detect(string,pattern) ]
+  string[ ! stringr::str_detect(string,pattern) ]

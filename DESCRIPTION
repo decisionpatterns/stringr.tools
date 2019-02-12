@@ -2,7 +2,7 @@ Package: stringr.tools
 Type: Package
 Title: Useful Extensions to the Popular 'stringr' Package
 Version: 0.2.1
-Date: 2018-10-31
+Date: 2019-02-12
 Author@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
