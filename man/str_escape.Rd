@@ -23,11 +23,11 @@ is handy when working with regular expressions, file descriptors, etc. where
 certain characters have special meaning. By escaping, the character will
 match litereally instead of using their special meanings.
 
-\code{str_escape_dot} wraps \code{str_escape} using \code{x='.'} and \code{escape='\\'}
+\code{str_escape_dot} wraps \code{str_escape} using \code{x='.'} and \code{escape='\\\\'}
 }
 \examples{
   str_escape( "path/to/file", "/" )
-  str_escape( "path/to/file", "/", '\\\\' )
+  str_escape( "path/to/file", "/", "\\\\" )
 
   str_escape_dot("hello.world")   # "hello\\\\.world"
   str_escape_dot("foo.bar.baz")   # "foo\\\\.bar\\\\.baz"
