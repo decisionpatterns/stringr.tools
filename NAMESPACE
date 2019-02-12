@@ -3,6 +3,7 @@
 export(is_string)
 export(re_class)
 export(str_detect_tag)
+export(str_escape)
 export(str_escape_dot)
 export(str_grep)
 export(str_grepv)
