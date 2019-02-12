@@ -49,7 +49,7 @@ str_suffix <- str_postfix
 #' not be added to elements that are already prefixed.
 #'
 #' @examples
-#'  x <- c( "foo", "pre.foo", "bar", "pre.bar" )
+#'  x <- c( "foo", "pre.foo", "bar", "pre.bar", "one.two.three" )
 #'  str_prefix_idem(x, "pre.")
 #'
 #' @rdname str_prefix
@@ -58,7 +58,7 @@ str_suffix <- str_postfix
 str_prefix_idem <- function(x, prefix, ...) {
 
   prefix ->.;
-    escape_dot(.) ->.;
+    str_escape_dot(.) ->.;
     paste0( "^", .) ->
     re
 
@@ -72,15 +72,18 @@ str_prefix_idem <- function(x, prefix, ...) {
 
 
 #' @examples
-#'  x <- c( "foo", "foo.post", "bar", "bar.post" )
+#'  x <- c( "foo", "foo.post", "bar", "bar.post", "one.two.three" )
 #'  str_postfix_idem(x, ".post")
+#'
+#'  # Idempotency
+#'  str_postfix_idem( str_postfix_idem(x, ".post"), ".post" )
 #'
 #' @rdname str_prefix
 #' @export
 str_postfix_idem <- function(x, postfix, ...) {
 
   postfix ->.;
-    escape_dot(.) ->.;
+    str_escape_dot(.) ->.;
     paste0( ., "$" ) ->
     re
 
