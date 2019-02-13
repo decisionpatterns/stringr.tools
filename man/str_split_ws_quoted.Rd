@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_split_ws_quoted.R
 \name{str_split_ws_quoted}
 \alias{str_split_ws_quoted}
-\title{Intelligently Split on Whitespace}
+\title{Split string on whitespace leaving quoted regions intact}
 \usage{
 str_split_ws_quoted(x, quotes = c("'", "\\""))
 }
@@ -10,7 +10,7 @@ str_split_ws_quoted(x, quotes = c("'", "\\""))
 \item{x}{character or string; (required)}
 
 \item{quotes}{character or string; character interpreted as quotes. The
-default is: ' *single-quote and " *double-quote}
+default is: ' \emph{single-quote} and \emph{double-quote}}
 }
 \value{
 character vector
@@ -19,7 +19,7 @@ character vector
 Splits a string on whitespace while ignoring whitespace inside quotes
 }
 \details{
-\code{str_split_ws_nonquote} splits strings into a vector elements delineated
+\code{str_split_ws_quoted} splits strings into a vector elements delineated
 by whitespace and ignoring whitespace enclosed in quotes.  It also removes
 those quotes from strings.
 
@@ -27,13 +27,13 @@ those quotes from strings.
 closing characters.
 }
 \examples{
-  character(0) \%>\% str_split_ws_nonquote()  # character(0)
-  "" \%>\% str_split_ws_nonquote()            # "" - no splitting
-  "foo" \%>\% str_split_ws_nonquote()         # "foo"
-  "foo bar" \%>\% str_split_ws_nonquote       # "foo" "bar"
-  "'foo' bar" \%>\% str_split_ws_nonquote     # "foo" "bar"
-  "'foo' \\"bar\\"" \%>\% str_split_ws_nonquote # "foo" "bar"
-  "'foo bar" \%>\% str_split_ws_nonquote      #
+  character(0) \%>\% str_split_ws_quoted()  # character(0)
+  "" \%>\% str_split_ws_quoted()            # "" - no splitting
+  "foo" \%>\% str_split_ws_quoted()         # "foo"
+  "foo bar" \%>\% str_split_ws_quoted       # "foo" "bar"
+  "'foo' bar" \%>\% str_split_ws_quoted     # "foo" "bar"
+  "'foo' \\"bar\\"" \%>\% str_split_ws_quoted # "foo" "bar"
+  "'foo bar" \%>\% str_split_ws_quoted      #
 
 }
 \author{

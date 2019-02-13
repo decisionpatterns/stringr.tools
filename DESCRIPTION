@@ -1,8 +1,8 @@
 Package: stringr.tools
 Type: Package
 Title: Useful Extensions to the Popular 'stringr' Package
-Version: 0.3.2
-Date: 2019-02-12
+Version: 0.3.3
+Date: 2019-02-13
 Author@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
@@ -14,6 +14,8 @@ Description:
     drop-in replacement.
 Depends:
     stringr (>= 1.0)
+Imports: 
+    stringi (>= 1.2)
 Suggests:
     testthat (>= 0.10.0),
     knitr (>= 1.13)

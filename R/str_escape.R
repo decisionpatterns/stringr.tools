@@ -21,10 +21,12 @@
 #'   str_escape_dot("foo.bar.baz")   # "foo\\.bar\\.baz"
 #'
 #' @importFrom stringr str_replace_all
+#' @importFrom stringr fixed
+#' @import stringr
 #' @export
 
 str_escape <- function(string, x, escape="\\")
-  stringr::str_replace_all( string, fixed(x), paste0(escape, x) )
+  stringr::str_replace_all( string, stringr::fixed(x), paste0(escape, x) )
 
 
 #' @rdname str_escape
