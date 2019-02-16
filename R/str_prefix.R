@@ -3,9 +3,8 @@
 #' Adds a prefix or suffix to strings
 #'
 #' @param x character vector or object with a names attribute
-#' @param prefix string;
-#' @param postfix string used as a suffix;
-#' @param ... additional arguments passed to [base::paste()]
+#' @param prefix,postfix string for pre- or postfix
+#' @param ... additional arguments passed to subsequent functions
 #'
 #' @details
 #'
@@ -45,8 +44,9 @@ str_suffix <- str_postfix
 
 
 #' @details
-#' [str_prefix_idem()] is an idempotent form of [str_prefix()]. Prefixes will
-#' not be added to elements that are already prefixed.
+#' [str_prefix_idem()] and [str_postfix_idem()] are idempotent forms of
+#' [str_prefix()] and [str_postfix()]. Pre- and postfixes are not added to
+#' elements that are already pre- or postfixed.
 #'
 #' @examples
 #'  x <- c( "foo", "pre.foo", "bar", "pre.bar", "one.two.three" )
